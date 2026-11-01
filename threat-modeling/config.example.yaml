@@ -1,0 +1,19 @@
+# Copy to config.yaml (optional). Credentials belong in .env, not here.
+output_dir: output
+
+# How many hours of Meraki client history to pull (used to place devices in VLANs)
+meraki_client_timespan_hours: 24
+
+# If a VLAN has more assets than this, they are collapsed into one node per
+# category (e.g. "Workstations (412)"). Set higher for detailed diagrams.
+max_nodes_per_zone: 8
+
+# Draw the Meraki default "allow any -> any" rule as a flow (very noisy)
+include_default_rules: false
+
+# Ports considered high risk when exposed to the Internet / across boundaries
+risky_ports: [21, 22, 23, 25, 135, 139, 445, 1433, 1521, 3306, 3389, 5432, 5900, 5985, 5986, 6379, 9200, 27017]
+cleartext_ports: [20, 21, 23, 25, 69, 80, 110, 143, 161, 389, 1883, 8080]
+
+# Sophos endpoints not seen in this many days are flagged as stale
+stale_days: 14
